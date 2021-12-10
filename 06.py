@@ -47,7 +47,4 @@ for package in data:
             placed = True
         current_row += 1
 
-    if not placed:
-        rows[current_row-1][x0:x0+x1] = [1] * x1
-
 print("\nFallen packages:", falls)
