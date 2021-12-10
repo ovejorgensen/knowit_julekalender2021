@@ -18,8 +18,6 @@ for package in data:
     row[x0:x0+x1] = [1] * x1
 
     placed = False
-    fall = False
-
     current_row = 0
     while (not placed) or current_row == len(rows)-1:
         if x1 == 1 and rows[current_row][x0] == 1:
@@ -43,12 +41,10 @@ for package in data:
             placed = True
         elif any(rows[current_row][x0:x0+int(x1/2)]) and not any(rows[current_row][x0+int(x1/2):x0+x1]):
             falls += 1
-            fall = True
             placed = True
         elif not any(rows[current_row][x0:x0+int(x1/2)]) and any(rows[current_row][x0+int(x1/2):x0+x1]):
             falls += 1
             placed = True
-            fall = True
         current_row += 1
 
     if not placed:
